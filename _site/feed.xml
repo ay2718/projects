@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-09T10:18:32-05:00</updated><id>http://localhost:4000/</id><title type="html">Aaron Yeiser</title><subtitle>Here is a selection of things I built. Some may still be under construction.</subtitle><entry><title type="html">Science Olypiad Projects</title><link href="http://localhost:4000/scioly" rel="alternate" type="text/html" title="Science Olypiad Projects" /><published>2018-02-08T00:00:00-05:00</published><updated>2018-02-08T00:00:00-05:00</updated><id>http://localhost:4000/scioly</id><content type="html" xml:base="http://localhost:4000/scioly">&lt;p&gt;Throughout high school, I was a member of the Science Olympiad team.
+I mostly worked on building events.  Here is a list of some more successful building events:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Mechanical clock&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I built an entirely mechanical clock that had to accurately keep time for up to five minutes
+  This clock was mostly built out of wood, and it used a &lt;a href=&quot;https://en.wikipedia.org/wiki/Escapement#Gravity_escapement&quot;&gt;gravity escapement&lt;/a&gt;.
+  Despite its questionable structural integrity, it kept time impressively well, to within a quarter second in five minutes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Electric Vehicle&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The goal of electric vehicle was to aim a vehicle so that it stopped as close to a target as possible as fast as possible.
+  Guidance took the form of aiming the vehicle extremely carefully and using dead reckoning.
+  Fortunately for me, microprocessors were allowed.
+  I found an old brushless motor and motor controller from building my &lt;a href=&quot;/projects/quadcopter&quot;&gt;quadcopter&lt;/a&gt;, and I made a belt drive out of a large O-ring.
+  Instead of using a rotary encoder like a normal human being, I painted black and white stripes on a wooden disk and used an Arduino and a photodiode to count distance.
+  The Arduino also controlled the motor and used position data to provide an optimal acceleration and deceleration curve.
+  To stop the car, a small servo pushed a small piece of aluminum stock into the belt drive, generating friction.
+  Steering was another problem.  We could adjust the steering by making slight adjustments to the frame with threaded rod.
+  However, it was impossible to get the steering perfect, so we calculated known steering errors for different distances and compensated accordingly.
+  At the state competition, we got the car about 5 centimeters away from the target from a distance of 10 meters.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mission Possible&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;I include this project only out of grudging respect for its insanity.
+  The goal of Mission Possible was to build a device that made as many energy transfers as possible.
+  In fact, these energy transfers had to be between different kinds of energy–specifically mechanical, electrical, thermal, chemical, and optical energy.
+  The inevitable result was a demented Rube Goldberg machine that changed every time the official Science Olympiad rules changed–which was quite often.
+  I was roped into doing this event for two years, and both years, something inevitably broke or got disqualified.
+  I only include this project to show that it was the bane of my existence for two years.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Unfortunately, I don’t really have pictures of these projects.
+Many of them were disassembled and the rest are sadly decaying on a shelf at my high school.&lt;/p&gt;</content><author><name></name></author><summary type="html">Throughout high school, I was a member of the Science Olympiad team. I mostly worked on building events. Here is a list of some more successful building events:</summary></entry><entry><title type="html">Partial Differential Equations</title><link href="http://localhost:4000/pdes" rel="alternate" type="text/html" title="Partial Differential Equations" /><published>2018-01-07T21:42:40-05:00</published><updated>2018-01-07T21:42:40-05:00</updated><id>http://localhost:4000/pdes</id><content type="html" xml:base="http://localhost:4000/pdes">&lt;p&gt;
+&lt;img src=&quot;/assets/pdes/image-049.png&quot; alt=&quot;Frame 1&quot; style=&quot;float: left; width: 49%; margin-right: 2%; margin-bottom: 2%&quot; /&gt;
+&lt;img src=&quot;/assets/pdes/image-099.png&quot; alt=&quot;Frame 2&quot; style=&quot;float: left; width: 49%; margin-bottom: 2%&quot; /&gt;
+&lt;img src=&quot;/assets/pdes/image-199.png&quot; alt=&quot;Frame 3&quot; style=&quot;float: left; width: 49%; margin-right: 2%; margin-bottom: 2%&quot; /&gt;
+&lt;img src=&quot;/assets/pdes/image-299.png&quot; alt=&quot;Frame 4&quot; style=&quot;float: left; width: 49%; margin-bottom: 2%&quot; /&gt;
+&lt;img src=&quot;/assets/pdes/image-399.png&quot; alt=&quot;Frame 5&quot; style=&quot;float: left; width: 49%; margin-right: 2%; margin-bottom: 2%&quot; /&gt;
+&lt;img src=&quot;/assets/pdes/image-499.png&quot; alt=&quot;Frame 6&quot; style=&quot;float: left; width: 49%; margin-bottom: 2%&quot; /&gt;
+&lt;em&gt;A vortex street develops and stabilizes behind a stationary object in a moving incompressible fluid.
+Red regions represent positive vorticity (counterclockwise rotation) and blue regions represent negative vorticity (clockwise rotation).  These images were generated with the PDE solver code I wrote for my research. &lt;/em&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Partial differential equations (PDEs for short) are a fascinating class of equations.
+PDEs accurately represent most physical phenomena that we see in everyday life, from heat transfer to electromagnetism to fluid dynamics.
+Solving PDEs by hand is usually impossible or impractical, so numerical methods must be used to understand them.
+Most PDE solvers operate by approximating the domain with polygon or polyhedron mesh.
+For instance, a typical PDE solver solving for structural stresses on a bridge would decompose the volume of the bridge into small tetrahedrons.
+The polygons or polyhedra create a set of basis functions on the domain that are solvable with a matrix equation.&lt;/p&gt;</content><author><name></name></author><summary type="html">A vortex street develops and stabilizes behind a stationary object in a moving incompressible fluid. Red regions represent positive vorticity (counterclockwise rotation) and blue regions represent negative vorticity (clockwise rotation). These images were generated with the PDE solver code I wrote for my research.</summary></entry><entry><title type="html">Quadcopter</title><link href="http://localhost:4000/quadcopter" rel="alternate" type="text/html" title="Quadcopter" /><published>2018-01-02T15:14:53-05:00</published><updated>2018-01-02T15:14:53-05:00</updated><id>http://localhost:4000/quadcopter</id><content type="html" xml:base="http://localhost:4000/quadcopter">&lt;p&gt;In tenth grade, I decided that I wanted a quadcopter, but I didn’t have the budget to pay for one outright.
+Therefore, I decided to build my own.
+I bought an Arduino, a cheap accelerometer and gyroscope chip, and the cheapest Hobbyking brushless motors and speed controllers.
+These were all haphazardly strapped onto a plywood frame held together with nylon bolts.
+When I first tested it, a combination of factors prevented the quadcopter from leaving the ground.
+A lack of knowledge of control theory meant that the quadcopter stabilization algorithm that I had programmed into the Arduino was already malfunctioning, and the dirt cheap motors spun at inconsistent speeds.
+To make matters worse, the frame was unacceptably floppy.&lt;/p&gt;
+
+&lt;p&gt;Many months and two hand injuries later, after buying better motors and redesigning the frame and the control algorithms, the quadcopter took its first shaky flight in the kitchen.
+The PID tuning coefficients were somewhat off, but they were close enough that I could tune the quadcopter to get stable flight.&lt;/p&gt;
+
+&lt;p&gt;Tragedy struck when the quadcopter was first flown in an unconfined open area.
+Fifteen seconds after takeoff, one of the propellers spun itself off, and the quadcopter ungracefully crashed into an empty parking lot.
+Fortunately, no important components were damaged beyond repair, and the frame was redesigned yet again.
+Each time the quadcopter crashed and broke the frame beyond repair (this happened several times), the frame was redesigned and reinforced.
+In its current form, the frame is lightweight, rigid, and nearly indestructible.&lt;/p&gt;
+
+&lt;p&gt;The brain of the quadcopter is the Arduino.
+I programmed the Arduino to receive radio signals, communicate with the gyroscope chip, send signals to the motor controllers, and also perform the stabilization algorithms necessary for flight.
+The quadcopter uses nested PID loops in order to fly.
+In an ideal system tuned with a PID controller, the process variable will change roughly linearly when the control variable is held constant.
+Since the control variable is motor thrust, the process variable is naturally angular velocity.
+However, flying a quadcopter is difficult without direct control over its angular position.
+The solution is to use a PID loop to control angular velocity, and then have a PID loop with angular position as the process variable and angular velocity as the control variable.
+In this case, the I and D coefficients can be set to zero, so I really only have a P controller for angular position. The code for the Arduino can be found &lt;a href=&quot;https://github.com/ay2718/arduino-quadcopter&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In order to tune the PID coefficients without risking crashing the quadcopter, I wrote a Python simulation of the quadcopter along one axis.
+Code for the Python simulation can be found &lt;a href=&quot;https://github.com/ay2718/quadcopter-pid-tuner&quot;&gt;here&lt;/a&gt;.
+The simulation included motor electrical characteristics, inherent delays in the Arduino programming, as well as the option to add a systematic bias or random noise.&lt;/p&gt;
+
+&lt;h2 id=&quot;pictures&quot;&gt;Pictures&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/quadcopter/Quadcopter4.jpg&quot; alt=&quot;Quadcopter top view&quot; style=&quot;float: left; width: 49%; margin-right: 2%; margin-bottom: 20px&quot; /&gt;
+&lt;img src=&quot;/assets/quadcopter/Quadcopter5.jpg&quot; alt=&quot;Quadcopter bottom view&quot; style=&quot;float: left; width: 49%; margin-bottom: 20px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As can be seen in the above pictures, the quadcopter frame consists of three main parts.
+The structural center of the quadcopter is an x-shaped piece of 1/4” plywood reinforced with vertical pieces of plywood.
+This element is extremely stiff and strong, and it holds the other two components.
+The electronics board is weakly attached to the center piece, so that it can break free in the event of a crash.
+Having the entire board break free is better than having individual components fly off.
+The arms are made of 1 cm^2 basswood, and they are bolted to the frame with nylon bolts so that they can be easily removed if they break.
+Motor controllers, motors, and landing gear are attached to the arms.
+Overall, the frame is designed to be lightweight, durable, and easily repairable.&lt;/p&gt;
+
+&lt;h2 id=&quot;update&quot;&gt;Update!&lt;/h2&gt;
+
+&lt;p&gt;I recently upgraded the quadcopter software and fixed two major bugs.
+First, I was using a library that computed a position approximation from accelerometer and gyroscope measurements on the chip itself.
+Unfortunately, this library was not designed for quadcopters.
+In order to get a position estimate from a gyroscope and accelerometer signal, the gyroscope is integrated and the accelerometer data is used to correct drift.
+It is typical for a quadcopter to undergo significant acceleration for a couple of seconds, during which the accelerometer data should not align with the gyroscope data.
+I wrote a new library that accounted for and minimized the effects of large extended acceleration, resulting in a much more stable quadcopter.&lt;/p&gt;
+
+&lt;p&gt;The second and more insidious bug was a problem with the built in Arduino I2C library.
+I eventually realized that this library had no timeout, so a failed transition would irreparably lock up the entire Arduino, resulting in a crash.
+Worse yet, the servo library uses timer interrupts independent of the main process, so without any updates from the main loop, the motors would continue spinning instead of stopping immediately.
+I found a new I2C library with a timeout, and I haven’t seen any crashes yet.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, I used extremely low quality plywood when building the quadcopter, and I broke the main part of the frame shortly after fixing the software.
+I ordered carbon fiber rod and sheet, and I am building a new frame entirely out of carbon fiber.
+Pictures will be posted when it is done.&lt;/p&gt;</content><author><name></name></author><summary type="html">In tenth grade, I decided that I wanted a quadcopter, but I didn’t have the budget to pay for one outright. Therefore, I decided to build my own. I bought an Arduino, a cheap accelerometer and gyroscope chip, and the cheapest Hobbyking brushless motors and speed controllers. These were all haphazardly strapped onto a plywood frame held together with nylon bolts. When I first tested it, a combination of factors prevented the quadcopter from leaving the ground. A lack of knowledge of control theory meant that the quadcopter stabilization algorithm that I had programmed into the Arduino was already malfunctioning, and the dirt cheap motors spun at inconsistent speeds. To make matters worse, the frame was unacceptably floppy.</summary></entry></feed>
