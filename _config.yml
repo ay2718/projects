@@ -18,8 +18,8 @@ email: ayeiser@mit.edu
 description: >- # this means to ignore newlines until "baseurl:"
     Here is a selection of things I built.
     Some may still be under construction.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ay2718.github.io/projects" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/projects" # the subpath of your site, e.g. /blog
+url: "https://ay2718.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 github_username:  ay2718
 
