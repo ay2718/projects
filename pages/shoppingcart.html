@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8"/>
+    <title>Aaron Yeiser Projects</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a target="_blank" href="/assets/resume.pdf">Resume</a></li>
+      <li><a href="/pages/about.html">About Me</a></li>
+      <li><a target="_blank" href="https://github.com/ay2718">Github</a></li>
+      <li><a href="/pages/contact.html">Contact</a></li>
+    </ul>
+    <h1>Semi-Autonomous Shopping Cart</h1>
+    <div class="textcontainer">
+      <p>
+        The motivation for this project was honestly to find the dumbest thing to motorize and make semi-autonomous.
+        I figured a shopping cart that followed a person around would be pretty entertaining, and with ProjX funding on my side, I bought some hoverboard motors from Ebay and machined some aluminum mounting plates.
+        The fixed casters of the shopping cart were removed with an angle grinder, and hoverboard motors mounted in their place.
+        To protect the motors from collisions, stump kickers were added.
+      </p>
+      <p>
+        I soon found that the motors and motor controllers did not have matching connectors.
+        After an excessive amount of soldering, the motor controllers had standard XT60 power plugs, and the hall effect sensor cables on the motors and motor controllers had matching 5 pin JST connectors.
+        The throttle wire and hall effect wires were also sent to a breadboard header.
+      </p>
+      <p>
+        Hoverboard motors for $25 each on Ebay is an excellent deal for a pretty powerful sensored brushless hub motor.
+        The $15 ebike controllers were somewhat disappointing.
+        They did an excellent job at accelerating the motors, but they had no electronic braking whatsoever.
+        This was very unfortunate because the shopping cart is steered by differential torque on the hoverboard motors.
+        Since the motor controllers could only apply forwards torque and no braking force, the cart could only turn while accelerating or maintaining speed.
+        This was very much not ideal for operating a motorized cart in a safe or controlled manner, but driving it was pretty entertaining.
+        I plan on buying better motor controllers to have a more reliable and useful finished product.
+      </p>
+      <p>
+        Without a usable cart, it was somewhat difficult to develop good software for the cart.
+        The cart uses a lidar for both tracking and obstacle avoidance, and I was able to write code that would actively track the target person to follow.
+        Although the lidar-based object tracking is far from perfect, it does a decent job of tracking a target, even in the presence of obstacles or other people.
+        Once I figure out how to capture a video of the lidar imaging in operation, I will upload it here.
+        I also recycled some code from my quadcopter to grab gyroscope data from an MPU6050 chip, and some other interrupt routines from the quadcopter code were recycled to use the hall effect sensors as a rotary encoder on the wheels.
+      </p>
+        
+      <div id="gallery">
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/cart_post_welding.jpg">
+              <img class="project-pic cropsize" src="/assets/cart_post_welding.jpg" />
+            </a>
+            <div class="caption">
+              The bottom of the cart with hoverboard wheels and stump kickers welded on.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/wheel_assembly.jpg">
+              <img class="project-pic cropsize" src="/assets/wheel_assembly.jpg" />
+            </a>
+            <div class="caption">
+              A closer view of one wheel.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/wheel_guard.jpg">
+              <img class="project-pic cropsize" src="/assets/wheel_guard.jpg" />
+            </a>
+            <div class="caption">
+              A closer view of a stump kicker.  These are to protect the hoverboard wheels from collisions with doors or other objects.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/wheel_preweld.jpg">
+              <img class="project-pic cropsize" src="/assets/wheel_preweld.jpg" />
+            </a>
+            <div class="caption">
+              The wheel clamped to the frame before welding.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/wheel_closeup.jpg">
+              <img class="project-pic cropsize" src="/assets/wheel_closeup.jpg" />
+            </a>
+            <div class="caption">
+              A milled aluminum piece holds the hoverboard wheel.
+              The aluminum plate is designed to bolt onto a matching steel plate welded to the cart.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/wheel_welded.jpg">
+              <img class="project-pic cropsize" src="/assets/wheel_welded.jpg" />
+            </a>
+            <div class="caption">
+              A wheel assembly welded and bolted together.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
