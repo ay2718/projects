@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8"/>
+    <title>Aaron Yeiser Projects</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+      .cfdleft {
+          width: calc(50% - 20px);
+          max-width: 700px;
+          box-sizing: border-box;
+          margin: 10px;
+      }
+      .cfdright {
+          float: left;
+          width: calc(50% - 20px);
+          max-width: 700px;
+          box-sizing: border-box;
+          margin: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a target="_blank" href="/assets/resume.pdf">Resume</a></li>
+      <li><a href="/pages/about.html">About Me</a></li>
+      <li><a target="_blank" href="https://github.com/ay2718">Github</a></li>
+      <li><a href="/pages/contact.html">Contact</a></li>
+    </ul>
+    <h1>Computational Fluid Dynamics</h1>
+    <div class="textcontainer">
+      <div>
+        <img class="cfdleft" src="/assets/image-049.png"/>
+        <img class="cfdright" src="/assets/image-099.png"/>
+        <img class="cfdleft" src="/assets/image-199.png"/>
+        <img class="cfdright" src="/assets/image-299.png"/>
+        <img class="cfdleft" src="/assets/image-399.png"/>
+        <img class="cfdright" src="/assets/image-499.png"/>
+        <div class="caption">
+          A vortex street develops and stabilizes behind a stationary object in a moving incompressible fluid. Red regions represent positive vorticity (CCW rotation) and blue regions represent negative vorticity (CW rotation).
+          These images were generated with the PDE solver code I wrote for my paper published in <a target="_blank" href="http://www.siam.org/Portals/0/Publications/SIURO/Volume%2011/S01705.pdf">SIURO</a> (also hosted <a target="_blank" href="/assets/SkinnyTriangles.pdf">here</a>).
+          <br><br>
+          <i>Copyright 2018 SIAM</i>
+        </div>
+      </div>
+      <p>
+        In high school, I did research with the MIT PRIMES program.
+        My project was to develop a faster and more accurate method of solving partial differential equations in two dimensions.
+        In order to solve a PDE, the domain is broken into many smaller polygons (usually triangles or quadrilaterals) and the solution to the PDE is approximated with a piecewise polynomial.
+        Finite element methods typically suffer from loss of precision when solving PDEs on meshes with skinny elements, and the computation time balloons when the polynomial approximant degree is increased.
+        The method I developed is numerically stable on meshes with skinny elements.
+        It is also significantly faster with higher polynomial degree approximants.
+      </p>
+      <p>
+        In order to test my method, I wrote a Navier-Stokes simulation.
+        As I learned the hard way, the Navier-Stokes equations are a nightmare to simulate properly.
+        There are a many different methods to choose from, all of which trade off accuracy, stability, computational complexity, and ease of implementation.
+        Ultimately, I settled on a relatively simple explicit time stepping scheme for demonstration purposes, which suffered from questionable stability and required a very small time step.
+      </p>
+    </div>
+  </body>
+</html>

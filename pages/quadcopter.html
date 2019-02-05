@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8"/>
+    <title>Aaron Yeiser Projects</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a target="_blank" href="/assets/resume.pdf">Resume</a></li>
+      <li><a href="/pages/about.html">About Me</a></li>
+      <li><a target="_blank" href="https://github.com/ay2718">Github</a></li>
+      <li><a href="/pages/contact.html">Contact</a></li>
+    </ul>
+    <h1>Quadcopter</h1>
+
+    <div class="textcontainer">
+      <p>
+        Code for the quadcopter can be found <a target="_blank" href="https://github.com/ay2718/arduino-quadcopter">here</a>.
+      </p>
+
+      <div id="gallery">
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/quadcopter_no_lights.jpg">
+              <img class="project-pic" src="/assets/quadcopter_no_lights.jpg">
+            </a>
+            <div class="caption">
+              Quadcopter with running lights off.  The control electronics are on a piece of plywood above the main frame.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/quadcopter_lights.jpg">
+              <img class="project-pic" src="/assets/quadcopter_lights.jpg">
+            </a>
+            <div class="caption">
+              Quadcopter with running lights on. Running lights are standard RGB LED strips wired to the battery.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/quadcopter_battery.jpg">
+              <img class="project-pic" src="/assets/quadcopter_battery.jpg">
+            </a>
+            <div class="caption">
+              The battery holder is a broken watch band.  So far, the battery hasn't fallen out mid flight.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/quadcopter_bottom.jpg">
+              <img class="project-pic" src="/assets/quadcopter_bottom.jpg">
+            </a>
+            <div class="caption">
+              Laser cut frame and a some terrifying wiring to provide power for the Arduino, running lights, and all four speed controllers.
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="/assets/quadcopter_landing_gear.jpg">
+              <img class="project-pic" src="/assets/quadcopter_landing_gear.jpg">
+            </a>
+            <div class="caption">
+              I used PVC pipe pieces zip tied to the frame to act as shock absorbers.  They work surprisingly well.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>
+        In 2014, when the quadcopter craze was kicking off, I really wanted a reasonably large quadcopter.
+        I decided it would be a lot more fun (and cheap) to build a quadcopter from scratch.
+        As I later realized, this was quite a task.
+        I bought the cheapest brushless motors and speed controllers I could find on Hobbyking that were specced to turn 10 inch propellers and strapped them to a crappy plywood frame.
+        With basically no control theory knowledge, the quadcopter did not fly at all.
+        The hardware was also lacking.  The frame was not nearly stiff enough and the motors were not very consistent.
+      </p>
+      <p>
+        I came to realize that there were four critical steps to building a functional quadcopter&mdash;good motors, a stiff, lightweight frame, properly implemented control loops, and accurate attitude data.
+      </p>
+      <p>
+        After doing some research, I found that my naive approach to PID control was doomed to failure.
+        In order to control the pitch and roll of the quadcopter, I simply used the pitch and roll angles as the process variables and the thrust differential between the motors as the control variable.
+        It turns out that pitch and roll angular velocities are much more appropriate control variables.
+        To actually control the quadcopter's pitch and roll angles, I nested the angular velocity control loop inside of an angular position feedback loop.
+        While this control scheme is mathematically identical to the original PID loops with an added double derivative (angular acceleration) term, the nested loops are easier to tune and handle conceptually.
+      </p>
+      <p>
+        A good feedback system needs to have fast and accurate feedback data.
+        I used an MPU6050 accelerometer/gyro chip that I bought for a grand total of $2.99, and I got shockingly good data from such a cheap chip.
+        The chip gives readings accurate to about five significant figures at 200 Hz, with a built in low pass filter.
+        The main stumbling block for feedback was calculating the pitch and roll angles from angular velocity and accelerometer data.
+        A really naive approach would be use the accelerometer to approximate which way is down.
+        Accelerometer readings are generally noisy, especially when the accelerometer is mounted on a frame with four motors spinning at several thousand RPM.
+        Even more critically, the accelerometer measures the sum of gravity <i>and</i> acceleration, so any movement of the quadcopter would confuse the accelerometer and the feedback systems.
+        Another approach would be to integrate the gyroscope angular velocity readings, but this approach is also flawed.
+        I originally found a library that implemented a Kalman filter that could run on the MPU6050 chip, but ultimately, I wrote my own Kalman filter that ran on the Arduino for increased control over the filtering process.
+      </p>
+      <p>
+        In order to tune the PID coefficients for the quadcopter, I wrote a Python program that simulated the quadcopter on one axis.
+        I included simulated noise delays, and electrical characteristics of the motors in order to properly tune the quadcopter.
+        Although I had to estimate the moment of inertia of the rotors and quadcopter, as well as the aerodynamic characteristics of the propellers, the PID coefficients from a well-tuned model worked fairly well in the real world.
+      </p>
+      <p>
+        The quadcopter is about as closed to finished as it will ever be right now.
+        However, I still have plans for improvement.
+        I want to design a digital FPV system with a Raspberry Pi and a pair of Alfa AWUS036H WiFi adapters.
+        With a barely legal 1 watt transmission power, I can get quite good signal strength pretty far away.
+        I had attempted to run the FPV system with less powerful WiFi cards, but I ran into problems with the connection dropping and bad frames getting transmitted.
+      </p>
+    </div>
+  </body>
+</html>
