@@ -17,19 +17,76 @@
     <h1>Mini Analog Segway</h1>
     <div class="textcontainer">
       <p>
+      Links to pdfs of the <a target="_blank" href="assets/segway/analog_segway.pdf">control circuit</a>, <a target="_blank" href="assets/segway/h-bridge.pdf">current controlled motor driver</a>, and <a target="_blank" href="assets/segway/receiver.pdf">radio receiver decoder</a>.
+      </p>
+
+      <p>
         During the spring of 2019, I took 6.101, an analog electronics lab class.
         I decided to build a build a miniature analog segway for a final project.
-        
+        I laser cut an acrylic frame, designed fully analog current-controlled reversible motor drivers, and implemented a state-space feedback system to control the cart.
+        The feedback system included observers for the cart's angle from vertical and translational velocity using accelerometer and gyroscope measurements, as well as by measuring the current and back emf of the motors.
+      </p>
+
+      <p>
+        Detailed information about the controls system design and electrical engineering behind the project can be found <a target="_blank" href="assets/segway/report.pdf">here</a> in the final report for the class.
+      </p>
+
+      <p>
+      <a target="_blank" href="https://web.mit.edu/6.101/www/s2019/projects/segway_s.mp4">Project video</a>
       </p>
         
       <div id="gallery">
         <div class="box">
           <div class="inner-content">
-            <a href="assets/room-pics/full-room.jpg">
-              <img class="project-pic" src="assets/room-pics/full-room.jpg">
+            <a href="assets/segway/drivers-in-frame.jpg">
+              <img class="project-pic cropsize" src="assets/segway/thumbnails/drivers-in-frame.jpg">
             </a>
             <div class="caption">
-              A picture of my room taken from the doorway, showing most of the room improvements.
+              The motor drivers inside the frame
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/segway/frame-preassembly.jpg">
+              <img class="project-pic cropsize" src="assets/segway/thumbnails/frame-preassembly.jpg">
+            </a>
+            <div class="caption">
+              The laser-cut acrylic frame assembled before gluing it together
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/segway/fully_assembled.jpg">
+              <img class="project-pic cropsize" src="assets/segway/thumbnails/fully_assembled.jpg">
+            </a>
+            <div class="caption">
+              The whole segway on its side
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/segway/h-bridge.jpg">
+              <img class="project-pic cropsize" src="assets/segway/thumbnails/h-bridge.jpg">
+            </a>
+            <div class="caption">
+              The current-controlled motor drivers before putting them in the frame
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/segway/top-controller.jpg">
+              <img class="project-pic cropsize" src="assets/segway/thumbnails/top-controller.jpg">
+            </a>
+            <div class="caption">
+              The controller breadboard showing an Arduino used to read an MPU6050 and output accelerometer and gyroscope measurements through a DAC, as well as the analog feedback circuit for controlling the wheels
             </div>
           </div>
         </div>
