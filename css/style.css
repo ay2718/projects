@@ -61,6 +61,12 @@ h2 {
     text-align: center;
 }
 
+.textcontainer {
+    margin: 0 auto;
+    width: calc(100% - 20px);
+    max-width: 960px;
+}
+
 .box {
     width: 33.33%;
     padding-bottom: 33.33%;
@@ -69,17 +75,27 @@ h2 {
     overflow: hidden;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 960px) {
     .box {
         width: 50%;
         padding-bottom: 50%;
     }
+    .textcontainer {
+        margin: 0 auto;
+        width: calc(100% - 20px);
+        max-width: 640px;
+    }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 640px) {
     .box {
         width: 100%;
         padding-bottom: 100%;
+    }
+    .textcontainer {
+        margin: 0 auto;
+        width: calc(100% - 20px);
+        max-width: 320px;
     }
 }
 
@@ -110,7 +126,7 @@ h2 {
     
 
 .caption {
-    font-size: 16px;
+    font-size: 14px;
     font-style: italic;
     text-align: left;
     padding: 8px;
@@ -124,11 +140,6 @@ h2 {
     text-aligh: left;
 }
 
-.textcontainer {
-    margin: 0 auto;
-    width: calc(100% - 20px);
-    max-width: 1280px;
-}
 
 .narrow {
     max-width: 640px;
