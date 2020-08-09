@@ -9,6 +9,10 @@ p {
     font-size: 18px;
 }
 
+img {
+    image-orientation: from-image;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

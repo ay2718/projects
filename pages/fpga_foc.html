@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8"/>
+    <title>Aaron Yeiser Projects</title>
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a target="_blank" href="assets/resume.pdf">Resume</a></li>
+      <li><a href="pages/about.html">About Me</a></li>
+      <li><a target="_blank" href="https://github.com/ay2718">Github</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+    <h1>Brushless Motor Controller</h1>
+    <div class="textcontainer">
+      <p> In the fall 2019 semester, I took 6.111 (digital logic design).
+      Jackson Gray and I built a brushless motor controller as a final project for the class.
+      The switching logic for the controller was running on a Digilent Cmod A7 FPGA module, and for maximum power, we used a 2004 Prius inverter.
+      The Prius inverter has the advantage that it is designed to several hundred volts of input power, a few hundred amps of output current, and costs about $100 from a scrapyard.
+      It's an impressively powerful inverter for impressively cheap, and it's nearly impossible to accidentally blow up, making it a great piece of test hardware for large motors.
+      </p>
+
+      <p>
+      Based on some older work by Bayley Wang on reverse engineering the prius inverter <a href="https://isopack.blogspot.com/2016/05/bremsproject-season-2-part-1-new.html">here</a>, Jackson and I were able to control the inverter and get current sensor feedback.
+      </p>
+
+      <p> 
+      A copy of our final report is <a target="_blank" href="/assets/fpga_foc/fpga_foc.pdf">here</a>.
+      </p>
+
+      <p>
+      We used a Hyundai Sonata hybrid alternator motor as a test motor.
+      This motor is an IPM capable of outputting roughly 20 kW, so it's a good motor for testing a brushless motor controller.
+      It has a relatively high winding inductance, so it works reasonably well with a low switching frequency.
+      A paper for 6.640 where I analyze the motor's electrical properties is <a target="_blank" href="/assets/fpga_foc/final_project.pdf">here</a>.
+      </p>
+
+      <div id="gallery">
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/fpga_foc/prius_inverter.jpg">
+              <img class="project-pic" src="assets/fpga_foc/thumbnails/prius_inverter.jpg">
+            </a>
+            <div class="caption">
+                The power IGBT block from a 2004 Toyota Prius inverter
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/fpga_foc/pcb.jpg">
+              <img class="project-pic" src="assets/fpga_foc/thumbnails/pcb.jpg">
+            </a>
+            <div class="caption">
+                The PCB with the CMOD A7 and cable to connect to the inverter
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="inner-content">
+            <a href="assets/fpga_foc/miters.jpg">
+              <img class="project-pic" src="assets/fpga_foc/thumbnails/miters.jpg">
+            </a>
+            <div class="caption">
+                Our extremely sophisticated test setup
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
